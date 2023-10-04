@@ -7,5 +7,5 @@ If you want a hub added to this please submit a request via my discord server (T
 Script
 -
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Releases/v1.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/loader.lua"))()
 
