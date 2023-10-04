@@ -5,4 +5,4 @@ Repo for my script called RadioSilence to provide autoupdating features. May bre
 Script:
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Releases/v1.lua"))()
-```
+
