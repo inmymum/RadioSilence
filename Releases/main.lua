@@ -1,23 +1,13 @@
--- Setup libraries and tabs for the gui
+-- Setup libraries and functions
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/uilib.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
-
-local hubtab = Window:NewTab("Hubs")
-local movehub = Window:NewTab("Movement")
-local rapetab = Window:NewTab("Rape")
-
-local hubs = hubtab:NewSection("List of scripts/hubs")
-local movement = movehub:NewSection("Movement Tweaks")
-local rape = rapetab:NewSection("Rape The hoes")
-
--- Thank user for using my custom gui
-game.StarterGui:SetCore("SendNotification", {
-    Title = "RadioSilence";
-    --Text = "Thank you for using RadioSilence!\nI'll add a discord in the near future";
-})
-
--- function to get list of players in the current game for dropdowns
-function getPlayerNames()
+function Notify(msg)-- Send user notification
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "RadioSilence";
+        Text = msg;
+    })
+end
+function getPlayerNames()-- Get list of players for selection dropdown
     local playerNames = {}
     for _, player in pairs(game.Players:GetPlayers()) do
         table.insert(playerNames, player.Name)
@@ -25,13 +15,22 @@ function getPlayerNames()
     return playerNames
 end
 
+function Setup
+-- Initialize tabs and sections
+local hubtab = Window:NewTab("Hubs")
+local movehub = Window:NewTab("Movement")
+local rapetab = Window:NewTab("Rape")
+local hubs = hubtab:NewSection("List of scripts/hubs")
+local movement = movehub:NewSection("Movement Tweaks")
+local rape = rapetab:NewSection("Rape The hoes")
+
 -- Setup the rape tab
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
     rapist = x
-end)
+end)-- rapist
 local dropdown1 = rape:NewDropdown("Victim","", getPlayerNames(), function(y)
     victim = y
-end)
+end)-- victim
 rape:NewLabel("")
 rape:NewButton("Refresh playerlist", "Refreshes playerlist", function()
     local list = getPlayerNames()
@@ -220,7 +219,7 @@ end)
 --    killdropdown:Refresh(list)
 --end)
 
--- Setup the script hub tab
+-- Setup script hub tab
 hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
@@ -228,23 +227,24 @@ hubs:NewButton("Tiger admin", "Op admin for prison life", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/Script"))()
 end)
 
--- Setup movement tweaks
+-- Setup movement tweaks tab
 movement:NewLabel("Speed")
 movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
-movement:NewButton("Default","", function()
+movement:NewButton("Default", "Set jump height to default", function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
 end)
 movement:NewLabel("Jump height")
 movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
-movement:NewButton("Default", "", function()
+movement:NewButton("Default", "Set jump height to default", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
 end)
 
--- Show UI
-hubs:UpdateSection("")
-rape:UpdateSection("")
-movement:UpdateSection("")
+    
+    -- Load UI
+    hubs:UpdateSection("")
+    rape:UpdateSection("")
+    movement:UpdateSection("")
