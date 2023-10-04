@@ -2,9 +2,9 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
-function Notify(msg) -- Send user notification
+function Notify(ver,msg) -- Send user notification
     game.StarterGui:SetCore("SendNotification", {
-        Title = "RadioSilence V1";
+        Title = "RadioSilence" .. ver;
         Text = msg;
     })
 end
@@ -71,4 +71,4 @@ end)
 hubs:UpdateSection("")
 rape:UpdateSection("")
 movement:UpdateSection("")
-Notify("Thank you for using RadioSilence")
+Notify("V1","Thank you for using RadioSilence")
