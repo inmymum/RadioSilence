@@ -6,9 +6,9 @@ local hubtab = Window:NewTab("Hubs")
 local movehub = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 
-local hubs = hubtab:NewSection("list of scripts")
+local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
-local rape = rapetab:NewSection("Rape The Hoe")
+local rape = rapetab:NewSection("Rape The hoes")
 
 -- Thank user for using my custom gui
 game.StarterGui:SetCore("SendNotification", {
@@ -16,7 +16,7 @@ game.StarterGui:SetCore("SendNotification", {
     --Text = "Thank you for using RadioSilence!\nI'll add a discord in the near future";
 })
 
--- Get list of players in the current game
+-- function to get list of players in the current game for dropdowns
 function getPlayerNames()
     local playerNames = {}
     for _, player in pairs(game.Players:GetPlayers()) do
@@ -33,13 +33,11 @@ local dropdown1 = rape:NewDropdown("Victim","", getPlayerNames(), function(y)
     victim = y
 end)
 rape:NewLabel("")
-
 rape:NewButton("Refresh playerlist", "Refreshes playerlist", function()
     local list = getPlayerNames()
     dropdown:Refresh(list)
     dropdown1:Refresh(list)
 end)
-
 rape:NewButton("Rape that bitch", "", function()
     function fWeld(zName, zParent, zPart0, zPart1, zCoco, a, b, c, d, e, f)
         local funcw = Instance.new("Weld")
@@ -230,7 +228,7 @@ hubs:NewButton("Tiger admin", "Op admin for prison life", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/Script"))()
 end)
 
--- movement stuff
+-- Setup movement tweaks
 movement:NewLabel("Speed")
 movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
@@ -246,7 +244,7 @@ movement:NewButton("Default", "", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
 end)
 
--- render UI updates
+-- Show UI
 hubs:UpdateSection("")
 rape:UpdateSection("")
 movement:UpdateSection("")
