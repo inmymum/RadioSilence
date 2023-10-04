@@ -1,6 +1,9 @@
 # RadioSilence
+Official RadioSilence repo to provide regular auto update and/or new features. 
 
-Repo for my script called RadioSilence to provide autoupdating features. May break if I change the script but if it doesn't work just notify me under issues
+If this ever breaks it is due to an update or testing so please be patient and wait for an official update.
+-
+If you want a hub added to this please submit a request via my discord server (TO BE CREATED)
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Releases/v1.lua"))()
