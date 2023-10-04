@@ -26,7 +26,6 @@ local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
 
 -- Setup the rape tab
-loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/rapefunc.lua"))()
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
     rapist = x
 end)
@@ -40,6 +39,7 @@ rape:NewButton("Refresh playerlist", "Refreshes playerlist", function()
     dropdown1:Refresh(list)
 end)
 rape:NewButton("Fuck the bitch", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/rapefunc.lua"))()
     fun(rapist, victim)
 end)
 
