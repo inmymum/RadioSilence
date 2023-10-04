@@ -7,7 +7,7 @@ function Notify(ver, msg) -- Send user notification
         Title = "RadioSilence V1";
         Text = msg;
     })
-end
+end)
 
 function getPlayerNames() -- Get list of players for selection dropdown
     local playerNames = {}
