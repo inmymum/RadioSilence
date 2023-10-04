@@ -1,4 +1,5 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+-- Setup libraries and tabs for the gui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/uilib.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
 local hubtab = Window:NewTab("Hubs")
@@ -9,11 +10,13 @@ local hubs = hubtab:NewSection("list of scripts")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The Hoe")
 
+-- Thank user for using my custom gui
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Thank you for using RadioSilence!";
-    Text = "Press H to hide [work in progress]";
+    Title = "RadioSilence";
+    --Text = "Thank you for using RadioSilence!\nI'll add a discord in the near future";
 })
 
+-- Get list of players in the current game
 function getPlayerNames()
     local playerNames = {}
     for _, player in pairs(game.Players:GetPlayers()) do
@@ -22,7 +25,7 @@ function getPlayerNames()
     return playerNames
 end
 
--- rape stuff
+-- Setup the rape tab
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
     rapist = x
 end)
@@ -30,12 +33,14 @@ local dropdown1 = rape:NewDropdown("Victim","", getPlayerNames(), function(y)
     victim = y
 end)
 rape:NewLabel("")
+
 rape:NewButton("Refresh playerlist", "Refreshes playerlist", function()
     local list = getPlayerNames()
     dropdown:Refresh(list)
     dropdown1:Refresh(list)
 end)
-rape:NewButton("Rape that bitch and cum in her", "", function()
+
+rape:NewButton("Rape that bitch", "", function()
     function fWeld(zName, zParent, zPart0, zPart1, zCoco, a, b, c, d, e, f)
         local funcw = Instance.new("Weld")
         funcw.Name = zName
@@ -207,17 +212,17 @@ rape:NewButton("Rape that bitch and cum in her", "", function()
     fun(rapist, victim)
 end)
 
+-- WORK IN PROGRESS
 --local Kill = Window.NewTab("Kill")
 --local Section1 = Kill:NewSection("Kill someone")
 --local killdropdown = Kill:NewDropdown("","", getPlayerNames(game.Players:GetPlayers()), function()
-
 --end)
 --rape:NewButton("Refresh playerlist", "Refreshes playerlist", function()
 --    local list = getPlayerNames(game.Players:GetPlayers())
 --    killdropdown:Refresh(list)
 --end)
 
--- hubstuff
+-- Setup the script hub tab
 hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
