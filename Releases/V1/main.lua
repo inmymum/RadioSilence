@@ -4,7 +4,7 @@ local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
 function Notify(ver, msg) -- Send user notification
     game.StarterGui:SetCore("SendNotification", {
-        Title = "RadioSilence" .. ver;
+        Title = "RadioSilence V1";
         Text = msg;
     })
 end
