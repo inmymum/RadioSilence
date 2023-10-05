@@ -18,6 +18,7 @@ function getPlayerNames() -- Get list of players for selection dropdown
 end
 
 -- Initialize tabs and sections
+local refresh = Window:NewTab("Refresh")
 local hubtab = Window:NewTab("Hubs")
 local movehub = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
@@ -67,6 +68,9 @@ movement:NewButton("Default", "Set jump height to default", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
 end)
 
+movement:NewButton("Refresh UI", "", function()
+    print("Refresh")
+end)
 -- Load UI
 hubs:UpdateSection("")
 rape:UpdateSection("")
