@@ -27,6 +27,10 @@ local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
 
+refresh:NewButton("Refresh UI", "", function()
+    print("Refresh")
+end)
+
 -- Setup the rape tab
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
     rapist = x
@@ -69,9 +73,6 @@ movement:NewButton("Default", "Set jump height to default", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
 end)
 
-refresh:NewButton("Refresh UI", "", function()
-    print("Refresh")
-end)
 
 -- Load UI
 hubs:UpdateSection("")
