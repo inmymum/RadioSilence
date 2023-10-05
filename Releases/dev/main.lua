@@ -22,10 +22,10 @@ local movetab = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local hubtab = Window:NewTab("Hubs")
 local reloadtab = Window:NewTab("Reload")
-local refresh = reloadtab:NewSection("Reload UI")
-local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
+local hubs = hubtab:NewSection("List of scripts/hubs")
+local refresh = reloadtab:NewSection("Reload UI")
 
 -- Setup movement tweaks tab
 movement:NewLabel("Speed")
