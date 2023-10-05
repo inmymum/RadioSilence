@@ -18,13 +18,13 @@ function getPlayerNames() -- Get list of players for selection dropdown
 end
 
 -- Initialize tabs and sections
-local refresh = Window:NewTab("Refresh")
 local hubtab = Window:NewTab("Hubs")
 local movehub = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
+local refresh = Window:NewTab("Refresh")
 
 -- Setup the rape tab
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
