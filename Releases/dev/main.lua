@@ -22,10 +22,10 @@ local hubtab = Window:NewTab("Hubs")
 local movetab = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local reloadtab = Window:NewTab("Reload")
+local refresh = reloadtab:NewSection("Reload UI")
 local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
-local refresh = reloadtab:NewSection("Reload UI")
 
 -- Setup the rape tab
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
@@ -78,4 +78,5 @@ hubs:UpdateSection("")
 rape:UpdateSection("")
 movement:UpdateSection("")
 refresh:UpdateSection("")
+
 Notify("DEVBUILD","Thank you for using RadioSilence")
