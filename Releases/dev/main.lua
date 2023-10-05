@@ -18,17 +18,29 @@ function getPlayerNames() -- Get list of players for selection dropdown
 end
 
 -- Initialize tabs and sections
-local hubtab = Window:NewTab("Hubs")
 local movetab = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
+local hubtab = Window:NewTab("Hubs")
 local reloadtab = Window:NewTab("Reload")
 local refresh = reloadtab:NewSection("Reload UI")
 local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
 
-refresh:NewButton("Refresh UI", "", function()
-    print("Refresh")
+-- Setup movement tweaks tab
+movement:NewLabel("Speed")
+movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
+end)
+movement:NewLabel("Jump height")
+movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
 end)
 
 -- Setup the rape tab
@@ -57,20 +69,8 @@ hubs:NewButton("Tiger admin", "Op admin for prison life", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/Scripts/Hubs/TigerAdmin.lua"))()
 end)
 
--- Setup movement tweaks tab
-movement:NewLabel("Speed")
-movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-movement:NewButton("Default", "Set jump height to default", function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
-end)
-movement:NewLabel("Jump height")
-movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-end)
-movement:NewButton("Default", "Set jump height to default", function()
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
+refresh:NewButton("Refresh UI", "", function()
+    print("Refresh")
 end)
 
 
