@@ -18,7 +18,7 @@ function getPlayerNames() -- Get list of players for selection dropdown
 end
 
 -- Initialize tabs and sections
-movement:NewButton("Refresh UI", "", function()
+Window:NewButton("Refresh UI", "", function()
     print("Refresh")
 end)
 local hubtab = Window:NewTab("Hubs")
