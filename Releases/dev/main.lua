@@ -19,7 +19,7 @@ end
 
 -- Initialize tabs and sections
 local hubtab = Window:NewTab("Hubs")
-local movehub = Window:NewTab("Movement")
+local movetab = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local reloadtab = Window:NewTab("Reload")
 local hubs = hubtab:NewSection("List of scripts/hubs")
@@ -74,8 +74,8 @@ refresh:NewButton("Refresh UI", "", function()
 end)
 
 -- Load UI
-hubs:UpdateSection()
-rape:UpdateSection()
-movement:UpdateSection()
-refresh:UpdateSection()
+hubtab:UpdateSection()
+rapetab:UpdateSection()
+movetab:UpdateSection()
+reloadtab:UpdateSection()
 Notify("DEVBUILD","Thank you for using RadioSilence")
