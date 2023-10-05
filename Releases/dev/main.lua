@@ -1,6 +1,6 @@
 -- Setup libraries and dependencies
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
-local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/UI/main.lua"))()
+local Window = Library.CreateLib("RadioSilenceV1 [ DEV ]", "DarkTheme")
 
 function Notify(ver,msg) -- Send user notification
     game.StarterGui:SetCore("SendNotification", {
@@ -38,17 +38,17 @@ rape:NewButton("Refresh playerlist", "Refreshes playerlist", function()
     dropdown:Refresh(list)
     dropdown1:Refresh(list)
 end)
-rape:NewButton("Fuck the bitch", "", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/rapefunc.lua"))()
+rape:NewButton("Fuck the bitch", "Let her cum on you", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/Scripts/rapefunc.lua"))()
     fun(rapist, victim)
 end)
 
 -- Setup hub list
-hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/InfiniteYield.lua'))()
+hubs:NewButton("Infinite Yield", "Admin panel", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/Scripts/Hubs/InfiniteYield.lua'))()
 end)
 hubs:NewButton("Tiger admin", "Op admin for prison life", function()
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/TigerAdmin.lua"))()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/Scripts/Hubs/TigerAdmin.lua"))()
 end)
 
 -- Setup movement tweaks tab
@@ -71,4 +71,4 @@ end)
 hubs:UpdateSection("")
 rape:UpdateSection("")
 movement:UpdateSection("")
-Notify("V1","Thank you for using RadioSilence")
+Notify("DEVBUILD","Thank you for using RadioSilence")
