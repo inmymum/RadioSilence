@@ -64,6 +64,3 @@ rape:NewButton("Fuck the bitch", "", function()
 end)
 
 Notify("V1","Thank you for using RadioSilence")
-hubs:UpdateSection("List of scripts/hubs")
-movement:UpdateSection("Movement Tweaks")
-rape:UpdateSection("Rape The hoes")
