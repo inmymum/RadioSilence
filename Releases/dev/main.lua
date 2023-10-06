@@ -21,11 +21,11 @@ end
 local movetab = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local hubtab = Window:NewTab("Hubs")
-local a = Window:NewTab("Reload")
-local movement = movehub:NewSection("Movement Tweaks")
+local re = Window:NewTab("Reload")
+local movement = movetab:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
 local hubs = hubtab:NewSection("List of scripts/hubs")
-local ab = a:NewSection("Reload UI")
+local reload = re:NewSection("Reload UI")
 
 -- Setup movement tweaks tab
 movement:NewLabel("Speed")
@@ -69,15 +69,14 @@ hubs:NewButton("Tiger admin", "Op admin for prison life", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/Scripts/Hubs/TigerAdmin.lua"))()
 end)
 
-ab:NewButton("Refresh UI", "", function()
+reload:NewButton("Refresh UI", "", function()
     print("Refresh")
 end)
-
 
 -- Load UI
 hubs:UpdateSection("")
 rape:UpdateSection("")
 movement:UpdateSection("")
-ab:UpdateSection("")
+reload:UpdateSection("")
 
 Notify("DEVBUILD","Thank you for using RadioSilence")
