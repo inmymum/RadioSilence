@@ -1,8 +1,7 @@
--- Setup libraries and dependencies
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
-function Notify(ver,msg) -- Send user notification
+function Notify(ver,msg)
     game.StarterGui:SetCore("SendNotification", {
         Title = "RadioSilence" .. ver;
         Text = msg;
