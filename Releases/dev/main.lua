@@ -75,7 +75,6 @@ reload:NewButton("Refresh UI", "", function()
 end)
 
 -- Load UI
--- hubs:UpdateSection("")
 -- rape:UpdateSection("")
 -- movement:UpdateSection("")
 -- reload:UpdateSection("")
