@@ -65,6 +65,3 @@ end)
 
 
 Notify("V1","Thank you for using RadioSilence")
-movement:UpdateSection("")
-hubs:UpdateSection("")
-rape:UpdateSection("")
