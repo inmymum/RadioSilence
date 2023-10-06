@@ -1,11 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "RadioSilence";
-    Text = "Thank you for using RadioSilence"
-})
-
 function getPlayerNames() -- Get list of players for selection dropdown
     local playerNames = {}
     for _, player in pairs(game.Players:GetPlayers()) do
@@ -21,28 +16,6 @@ local rapetab = Window:NewTab("Rape")
 local hubs = hubtab:NewSection("List of scripts/hubs")
 local movement = movehub:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
-
-hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/InfiniteYield.lua'))()
-end)
-hubs:NewButton("Tiger admin", "Op admin for prison life", function()
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/TigerAdmin.lua"))()
-end)
-
-movement:NewLabel("Speed")
-movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-movement:NewButton("Default", "Set jump height to default", function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
-end)
-movement:NewLabel("Jump height")
-movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-end)
-movement:NewButton("Default", "Set jump height to default", function()
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
-end)
 
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
     rapist = x
@@ -60,3 +33,28 @@ rape:NewButton("Fuck the bitch", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/rapefunc.lua"))()
     fun(rapist, victim)
 end)
+movement:NewLabel("Speed")
+movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
+end)
+movement:NewLabel("Jump height")
+movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
+end)
+hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/InfiniteYield.lua'))()
+end)
+hubs:NewButton("Tiger admin", "Op admin for prison life", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/TigerAdmin.lua"))()
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "RadioSilence";
+    Text = "Thank you for using RadioSilence"
+})
