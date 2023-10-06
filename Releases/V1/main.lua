@@ -1,9 +1,9 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
-function Notify(ver,msg)
+function Notify(msg)
     game.StarterGui:SetCore("SendNotification", {
-        Title = "RadioSilence" .. ver;
+        Title = "RadioSilence";
         Text = msg
     })
 end
@@ -63,4 +63,4 @@ rape:NewButton("Fuck the bitch", "", function()
     fun(rapist, victim)
 end)
 
-Notify("V1","Thank you for using RadioSilence")
+Notify("Thank you for using RadioSilence")
