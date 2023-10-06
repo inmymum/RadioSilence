@@ -1,12 +1,10 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
 local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
 
-function Notify(msg)
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "RadioSilence";
-        Text = msg
-    })
-end
+game.StarterGui:SetCore("SendNotification", {
+    Title = "RadioSilence";
+    Text = "Thank you for using RadioSilence"
+})
 
 function getPlayerNames() -- Get list of players for selection dropdown
     local playerNames = {}
@@ -62,5 +60,3 @@ rape:NewButton("Fuck the bitch", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/rapefunc.lua"))()
     fun(rapist, victim)
 end)
-
-Notify("Thank you for using RadioSilence")
