@@ -75,8 +75,4 @@ reload:NewButton("Refresh UI", "", function()
 end)
 
 -- Load UI
--- rape:UpdateSection("")
--- movement:UpdateSection("")
--- reload:UpdateSection("")
-
 Notify("DEVBUILD","Thank you for using RadioSilence")
