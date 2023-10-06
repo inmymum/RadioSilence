@@ -69,7 +69,7 @@ hubs:NewButton("Tiger admin", "Op admin for prison life", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/Dev/Lib/Scripts/Hubs/TigerAdmin.lua"))()
 end)
 
-reload:NewButton("Refresh UI", "", function()
+Window:NewButton("Refresh UI", "", function()
     print("Refresh")
     print()
 end)
