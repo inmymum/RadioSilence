@@ -22,10 +22,30 @@ local hubtab = Window:NewTab("Hubs")
 local movehub = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local hubs = hubtab:NewSection("List of scripts/hubs")
+hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/InfiniteYield.lua'))()
+end)
+hubs:NewButton("Tiger admin", "Op admin for prison life", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/TigerAdmin.lua"))()
+end)
+hubs:UpdateSection("")
 local movement = movehub:NewSection("Movement Tweaks")
+movement:NewLabel("Speed")
+movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
+end)
+movement:NewLabel("Jump height")
+movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
+end)
+movement:UpdateSection("")
 local rape = rapetab:NewSection("Rape The hoes")
-
--- Setup the rape tab
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
     rapist = x
 end)
@@ -42,33 +62,6 @@ rape:NewButton("Fuck the bitch", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/rapefunc.lua"))()
     fun(rapist, victim)
 end)
+rape:UpdateSection("")
 
--- Setup hub list
-hubs:NewButton("Infinite Yield", "Op all game admin panel", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/InfiniteYield.lua'))()
-end)
-hubs:NewButton("Tiger admin", "Op admin for prison life", function()
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/TigerAdmin.lua"))()
-end)
-
--- Setup movement tweaks tab
-movement:NewLabel("Speed")
-movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-movement:NewButton("Default", "Set jump height to default", function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
-end)
-movement:NewLabel("Jump height")
-movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-end)
-movement:NewButton("Default", "Set jump height to default", function()
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
-end)
-
--- Load UI
-hubs:UpdateSection()
-rape:UpdateSection()
-movement:UpdateSection()
 Notify("V1","Thank you for using RadioSilence")
