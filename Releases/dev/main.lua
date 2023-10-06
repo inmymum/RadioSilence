@@ -71,6 +71,7 @@ end)
 
 reload:NewButton("Refresh UI", "", function()
     print("Refresh")
+    print()
 end)
 
 -- Load UI
