@@ -22,6 +22,7 @@ local movetab = Window:NewTab("Movement")
 local rapetab = Window:NewTab("Rape")
 local hubtab = Window:NewTab("Hubs")
 local re = Window:NewTab("Reload")
+
 local movement = movetab:NewSection("Movement Tweaks")
 local rape = rapetab:NewSection("Rape The hoes")
 local hubs = hubtab:NewSection("List of scripts/hubs")
@@ -75,4 +76,5 @@ reload:NewButton("Refresh UI", "", function()
 end)
 
 -- Load UI
+movetab:Refresh()
 Notify("DEVBUILD","Thank you for using RadioSilence")
