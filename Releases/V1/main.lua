@@ -63,5 +63,4 @@ rape:NewButton("Fuck the bitch", "", function()
     fun(rapist, victim)
 end)
 
-
 Notify("V1","Thank you for using RadioSilence")
