@@ -68,5 +68,7 @@ movement:NewButton("Default", "Set jump height to default", function()
 end)
 
 -- Load UI
-
+hubs:UpdateSection("")
+rape:UpdateSection("")
+movement:UpdateSection("")
 Notify("V1","Thank you for using RadioSilence")
