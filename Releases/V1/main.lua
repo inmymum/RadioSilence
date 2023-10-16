@@ -54,7 +54,7 @@ hubs:NewButton("Tiger admin", "Op admin for prison life", function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/Scripts/Hubs/tigeradminmain"))()
 end)
 hubs:NewButton("Nameless admin, "", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
 end)
 game.StarterGui:SetCore("SendNotification", {
     Title = "RadioSilence";
