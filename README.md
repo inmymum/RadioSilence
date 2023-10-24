@@ -8,5 +8,5 @@ If you want a hub added to this please submit a request to prooffrogs or via my 
 Script
 -
 ```lua
-loadstring(game:HttpGet("https://github.com/inmymum/RadioSilence/blob/main/Loader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Releases/V1/main.lua"))()
 
